@@ -1,0 +1,25 @@
+<div class="hearderTitle mt-5">ALL THE CATS</div>
+<div class="row">
+    <div class="mb-3 col-xs-12 col-sm-6 col-md-4" *ngFor="let cat of this.catSvc.cats">
+        <div class="card h-100" (click)="getDetails(cat.id)">
+                <div class="image text-center">
+                        <img
+                            [src]="cat.url"
+                            [alt]="cat.id"
+                            class="card-img-top mt-2"
+                            style="max-width: 15em;"
+                        />
+                </div>
+                <hr>
+                <div class="card-inner">
+                    <div class="header">
+                            <h3>CAT-{{cat.id}}</h3>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 mt-5 container-notFound"
+    *ngIf="this.catSvc.cats.length <= 0">
+        <p>Finding cats...</p>
+    </div>    
+</div>

@@ -1,0 +1,24 @@
+<div class="hearderTitle mt-5">+INFO</div>
+<span *ngIf="this.catSvc.selectedCat != undefined  && this.catSvc.selectedCat as detailedCat">
+    <div class="card" style="background-color:#e2e2e2; clear: both;">
+        <div class="image text-center">
+            <img
+                [src]="detailedCat.url"
+                class="card-img-top mt-2"
+                style="max-width: 15em;"
+            />
+            </div>
+        <hr>
+        <div class="card-inner text-center">
+            <div class="header">
+                    <h3>{{detailedCat.nombre}}</h3>
+                <small class="text-muted">ID: {{detailedCat.id}}</small>
+                <h4 class="text-muted">Clicks: {{detailedCat.clics.toString()}}</h4>
+            </div>
+        </div>
+        <button class="right btn btn-dark mt-2" (click)="removeCat()">Quit cat</button>
+    </div>
+</span>
+<span *ngIf="this.catSvc.selectedCat == undefined">
+<p>Select a cat</p>
+</span>
