@@ -38,8 +38,12 @@
     height: 15vw;
     object-fit:cover
 }
-//TODO PUNTO DE QUIEBRE PARA MÓVILES (QUITAR WITH Y HEIGHT Y OBJECT-FIT A INITIAL)
-
+@media  (max-width: 800px) {
+    .card-img-top {
+        width: 100%;
+        height: auto;
+    }
+}
 
 .sticky {
     position: sticky;
